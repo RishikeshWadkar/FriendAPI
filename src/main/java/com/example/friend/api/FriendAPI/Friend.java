@@ -21,5 +21,6 @@ public class Friend {
     private String department;
     private String email;
     private String country;
-
+    private Integer netWorth;
+    private String dob;
 }

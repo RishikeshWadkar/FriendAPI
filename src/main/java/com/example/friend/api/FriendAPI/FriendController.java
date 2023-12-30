@@ -20,11 +20,14 @@ public class FriendController {
     @PostMapping("/friends/addnew")
     public void addFriend(@RequestBody Friend friend) {
         friendService.addFriend(friend);
+        System.out.println("Adding a new friend :: " + friend);
     }
 
     @PutMapping("/friends/{id}/edit")
     public void updateFriend(@PathVariable("id") Integer id, @RequestBody Friend friend){
+        friend.setId(id);
         friendService.updateFriend(friend);
+        System.out.println("Editing an existing friend :: " + friend);
     }
 
     @DeleteMapping("/friends/{id}/delete")

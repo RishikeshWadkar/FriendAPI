@@ -27,7 +27,7 @@ public class FriendController {
         friendService.updateFriend(friend);
     }
 
-    @DeleteMapping("/frends/{id}/delete")
+    @DeleteMapping("/friends/{id}/delete")
     public void deleterFriend(@PathVariable("id") Integer id){
         friendService.deleteFriend(id);
     }

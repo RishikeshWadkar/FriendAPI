@@ -25,13 +25,16 @@ public class FriendController {
 
     @PutMapping("/friends/{id}/edit")
     public void updateFriend(@PathVariable("id") Integer id, @RequestBody Friend friend){
-        friend.setId(id);
         friendService.updateFriend(friend);
-        System.out.println("Editing an existing friend :: " + friend);
     }
 
     @DeleteMapping("/friends/{id}/delete")
     public void deleterFriend(@PathVariable("id") Integer id){
         friendService.deleteFriend(id);
+    }
+
+    @GetMapping("/friends/search/{query}")
+    public List<Friend> searchFriends(@PathVariable("query") String query) {
+        return friendService.searchFriend(query);
     }
 }

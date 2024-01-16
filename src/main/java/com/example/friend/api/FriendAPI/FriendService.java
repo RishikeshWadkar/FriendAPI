@@ -26,4 +26,10 @@ public class FriendService {
     public void deleteFriend(Integer id) {
         friendRepository.deleteById(id);
     }
+
+    public List<Friend> searchFriend(String query) {
+        List<Friend> searchListFriend = friendRepository.findByFirstNameContaining(query);
+        System.out.println("searchFriend :: " + searchListFriend);
+        return searchListFriend;
+    }
 }
